@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>task_3</title>
+</head>
+<body>
+	<script>
+		"use strict";
+		/*
+		1. К 10 прибавляем 10
+		2. К полученному результату 20 конкатенируем строку "10"
+		3. 2010 присваиваем в переменную result
+		4. с помощью console.log выводим result в консоль
+		*/
+		let result = (10 + 10 + '10');
+		console.log(result);
+		/*
+		1. К 10 конкатенируем строку "10"
+		2. К полученному результату "1010" прибавляем 10
+		3. 101010 присваиваем в переменную result
+		4. с помощью console.log выводим result в консоль
+		*/
+		result = (10 + '10' + 10);
+		console.log(result);
+		/*
+		1. К 10 прибавляем 10
+		2. К полученному результату 20 привляем строку "10"
+		3. 2010 присваиваем в переменную result
+		4. с помощью console.log выводим result в консоль
+		*/
+		result = (10 + 10 + +'10');
+		console.log(result);
+		/*
+		1. 10 делим на унарный минус пустой строки
+		2. -Infinity присваиваем в переменную result
+		3. с помощью console.log выводим result в консоль
+		*/
+		result = (10 / -'');
+		console.log(result);
+		/*
+		1. 10 делим на унарный плюс строки "2,5"
+		2. Строка "2,5" не может быть приведена к типа number из-за запятой
+		3. Результат NaN присваиваем в переменную result
+		3. с помощью console.log выводим result в консоль
+		*/
+		result = (10 / +'2,5');
+		console.log(result);
+	</script>
+</body>
+</html>
