@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task_5</title>
+</head>
+<body>
+	<script>
+		'use strict';
+		
+		function sumTwoNum(num1, num2) {
+			return num1 + num2;
+		}
+
+		function subTwoNum(num1, num2) {
+			return num1 - num2;
+		}
+
+		function mulTwoNum(num1, num2) {
+			return num1 * num2;
+		}
+
+		function divTwoNum(num1, num2) {
+			return num1 / num2;
+		}
+
+		function mathOperation(arg1, arg2, operation) {
+			switch (operation) {
+				case 'сложение':
+					return sumTwoNum(arg1, arg2);
+				case 'вычитание':
+					return subTwoNum(arg1, arg2);
+				case 'умножение':
+					return mulTwoNum(arg1, arg2);
+				case 'деление':
+					return divTwoNum(arg1,arg2);
+				default:
+					alert('Такой операции нет в математике!');
+			}
+		}
+
+		let result = mathOperation(10, 5, 'сложение');
+		console.log(result);
+		result = mathOperation(10, 5, 'вычитание');
+		console.log(result);
+		result = mathOperation(10, 5, 'умножение');
+		console.log(result);
+		result = mathOperation(10, 5, 'деление');
+		console.log(result);
+		result = mathOperation(10, 5, 'поделиться');
+	</script>
+</body>
+</html>
