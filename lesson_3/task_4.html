@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task_3</title>
+</head>
+<body>
+	<script>
+		'use strict';
+		const products = [ 
+			{ 
+				id: 3, 
+				price: 127, 
+				photos: [ 
+					"1.jpg", 
+					"2.jpg", 
+				] 
+			}, 
+			{ 
+				id: 5, 
+				price: 499, 
+				photos: [] 
+			}, 
+			{ 
+				id: 10, 
+				price: 26, 
+				photos: [ 
+				"3.jpg" 
+				]
+			}, 
+			{ 
+				id: 8, 
+				price: 78, 
+			}, 
+		];
+		let prodWithImg = products.filter(function (product) {
+			if (product['photos'] && product['photos'].length) {
+				// console.log(product);
+				return product;
+			}
+		});
+		console.log(prodWithImg);
+		let sortProducts = products.sort(function (product1, product2) {
+			if (product1['price'] < product2['price']) {
+				return -1;
+			}
+			if (product1['price'] > product2['price']) {
+				return 1;
+			}
+			return 0;
+		});
+		console.log(sortProducts);
+	</script>
+</body>
+</html>

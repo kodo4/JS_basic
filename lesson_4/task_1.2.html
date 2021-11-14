@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task_3</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		function Post(author, text, date) {
+			this.author = author;
+			this.text = text;
+			this.date = date;
+		}
+
+		Post.prototype.edit = function(text) {
+			this.text = text;
+		}
+
+		function AttachedPost(author, text, date) {
+			Post.call(this, author, text, date);
+			this.highlighted = false;
+		}
+
+		AttachedPost.prototype = Object.create(Post.prototype);
+		AttachedPost.prototype.constructor = AttachedPost;
+
+		AttachedPost.prototype.makeTextHighlighted = function() {
+			this.highlighted = true;
+		}
+
+		const obj1 = new AttachedPost('Roman', 'lorem', '20 oct');
+		console.log(obj1);
+		obj1.edit('some text');
+		obj1.makeTextHighlighted();
+		console.log(obj1);
+
+		class Post1 {
+			constructor(author, text, date) {
+				this.author = author;
+				this.text = text;
+				this.date = date;
+			}
+
+			edit1(text) {
+				this.text = text;
+			}
+		}
+
+		class AttachedPost1 extends Post1 {
+			constructor(author, text, date) {
+				super(author, text, date);
+				this.highlighted = false;
+			}
+
+			makeTextHighlighted1() {
+				this.highlighted = true;
+			}
+		}
+
+		const obj2 = new AttachedPost1('Roman', 'lorem', '20 oct');
+		console.log(obj2);
+		obj2.edit1('some text');
+		obj2.makeTextHighlighted1();
+		console.log(obj2);
+
+	</script>
+</body>
+</html>
